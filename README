@@ -1,0 +1,13 @@
+﻿This project has been created for demo purposes by sascha@corti.com (@TechPreacher).
+
+WP8-Joystick is a user control for Windows Phone 8 XAML/C# projects that displays an on-screen Joystick.
+
+When the blue handle is dragged/moved on top of the main circle, the control uses a timer that fires an event "NewCoordinates" in a definable interval, set in the "TimerMiliSeconds" property. Setting TimerMiliSeconds to 1000 for example will cause the "NewCoordinates" event to fire every second as long as the joystick is manipulated (and the handle is actually moved). When the Joystick is released, the handle returns to the center and it fires a "Stop" event to notify the application.
+
+The "NewCoordinates" event returns an object of type WP8_Joystick.Joystick.MyCoordinates which contains two integers: Direction and Speed. Direction is the angle in which the handle is moved from the center of the control in a 360 degree scale with the top of the control being 0. Speed is the distance between the handle and the center ranging between 0 and 255.
+
+The Joystick monitors touch frames which can be enabled and disabled by the "StartJoystick" and "StopJoystick" methods.
+
+Known issues:
+
+The control doesn't render properly if its width doesn't equal its height.
